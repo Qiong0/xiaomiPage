@@ -2,7 +2,7 @@
 * @Author: Lenovo
 * @Date:   2018-09-03 15:42:32
 * @Last Modified by:   Lenovo
-* @Last Modified time: 2018-09-05 00:20:37
+* @Last Modified time: 2018-09-05 22:07:25
 */
 
 window.onload=function(){
@@ -305,7 +305,7 @@ for(let i=0;i<lis.length;i++){
 		for(let j=0;j<son.length;j++){
 			son[j].style.display="none";
 		}
-		son[i].style.display="block";
+		son[i].style.display="flex";
 	}
 	lis[i].onmouseleave=function(){
 		son[i].style.display="none";
@@ -331,7 +331,39 @@ for(let i=0;i<lis.length;i++){
 // }
 
 
+// 家电
+	let homebtn=document.querySelectorAll(".home .more li");
+	let homelist=document.querySelectorAll(".home .bottom .right1");
+	// console.log(color);
+	homebtn[0].classList.add("homeactive");
+	homelist[0].style.display="flex";
 
+	for(let i=0;i<homebtn.length;i++){
+		homebtn[i].onmouseenter=function(){
+			for(let j=0;j<homelist.length;j++){
+				homebtn[j].classList.remove("homeactive");
+				homelist[j].style.display="none";
+			}
+		homebtn[i].classList.add("homeactive");
+		homelist[i].style.display="flex";
+		}
+	}
+
+//返回顶部
+let back=document.querySelector(".backbottom1");
+// console.log(back);
+back.onclick=function(){
+		animate((document.body),{scrollTop:0});
+		animate((document.documentElement),{scrollTop:0});
+	
+	}
+
+	lis.forEach(function (value,index) {
+        value.onclick=function () {
+            animate(document.body,{scrollTop:arr[index]});
+              animate(document.documentElement,{scrollTop:arr[index]});
+        }
+    })
 
 
 
