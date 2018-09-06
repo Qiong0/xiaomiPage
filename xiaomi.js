@@ -2,7 +2,7 @@
 * @Author: Lenovo
 * @Date:   2018-09-03 15:42:32
 * @Last Modified by:   Lenovo
-* @Last Modified time: 2018-09-05 22:07:25
+* @Last Modified time: 2018-09-06 14:09:45
 */
 
 window.onload=function(){
@@ -22,7 +22,7 @@ window.onload=function(){
 	let flag=true;
 
 	//自动轮播
-	let t=setInterval(move, 3000);
+	let t=setInterval(move, 2000);
 	function move(){
 		next++;
 		if(next==imgs.length){
@@ -231,13 +231,13 @@ contentbanner(box4,dot4,leftBtn4,rightBtn4,width4,"boxdot");
 let out=document.querySelector(".recommend .two");
 let btnleft=document.querySelector(".recommend .left");
 let btnright=document.querySelector(".recommend .right");
-let wh=parseInt(getComputedStyle(out,null).width)/3;
+let wh=parseInt(getComputedStyle(out,null).width)/4;
 let times=0;
 // console.log(out,btnleft,btnright,wh);
 btnright.onclick=function(){
 	times++;
-	if(times==3){
-		times=2;
+	if(times==4){
+		times=3;
 	}
 	out.style.transform=`translate(${(-wh*times)}px)`;
 
@@ -314,21 +314,22 @@ for(let i=0;i<lis.length;i++){
 
 //头部选项卡
 
-// let lis1=document.querySelectorAll(".header li");
-// let son1=document.querySelectorAll(".header .son")
-// console.log(lis1,son1);
+let lis1=document.querySelectorAll(".header li");
+let son1=document.querySelectorAll(".header .son1")
+console.log(lis1,son1);
 
-// for(let i=0;i<lis1.length;i++){
-// 	lis1[i].onmouseenter=function(){
-// 		for(let j=0;j<son1.length;j++){
-// 			son1[j].style.height=0;
-// 		}
-// 		son1[i].style.height=229+"px";
-// 	}
-// 	lis1[i].onmouseleave=function(){
-// 		son1[i].style.height=0;
-// 	}
-// }
+
+for(let i=0;i<lis1.length;i++){
+	lis1[i].onmouseenter=function(){
+		for(let j=0;j<son1.length;j++){
+			son1[j].style.display="none";
+		}
+		son1[i].style.display="block";
+	}
+	lis1[i].onmouseleave=function(){
+		son1[i].style.display="none";
+	}
+}
 
 
 // 家电
