@@ -2,7 +2,7 @@
 * @Author: Lenovo
 * @Date:   2018-08-02 16:26:51
 * @Last Modified by:   Lenovo
-* @Last Modified time: 2018-09-06 17:19:05
+* @Last Modified time: 2018-09-15 10:37:59
 */
 *{
 	padding: 0;
@@ -71,11 +71,11 @@ a{text-decoration: none;}
 }
 .top .container .pic a{
     width: 80px;
-    height: 25.5px;
+    /* height: 25.5px; */
     color:#b0b0b0;
     font-size: 11px;
     float: right ;
-    padding-top: 14.5px;
+    padding-top: 12.5px;
 }
 .top .container .pic img{
 	height: 40px;
@@ -190,13 +190,14 @@ a{text-decoration: none;}
 }
 .header .container ul li{
 	float: left;
+	height: 100%;s
 }
 .header .container ul li .son1{
 	height: 229px;
 	width: 100%;
 	background: #fff;
 	position: absolute;
-	top:260px;
+	top:245px;
 	right: 0px;
 	transition: all .5s;
 	overflow: hidden;
@@ -285,6 +286,10 @@ a{text-decoration: none;}
     float: right;
     border: 1px solid #e0e0e0;
     background: #ffffff;
+
+}
+.search .right i{
+	margin-top: 15px;
 }
 .leftbox1{
     width: 46px;
@@ -499,7 +504,6 @@ a{text-decoration: none;}
 	width: 39px;
 }
 .banner .container .list .num .son .box .word{
-	/* width: 56px; */
 	height: 39px;
 	float: left;
 	text-align: center;
@@ -507,12 +511,17 @@ a{text-decoration: none;}
 	margin-left: 12px;
 }
 .banner .container .list .num .son .box .word span{
-	font-size: 12px;
+	font-size: 14px;
 	color: #333;
 }
-.banner .container .list .num .son .bigbox{
-/* 	width: 700px; */
+.banner .container .list .num .son .box:hover span{
+	color: #ff6700;
 }
+.banner .container .bannerbox{
+	height: 100%;
+	width: 100%;
+}
+
 
 
 /* 广告图adv */
@@ -645,7 +654,7 @@ a{text-decoration: none;}
     float: left;
     color:#e5e2e0;
     text-align: center;
-    line-height: 20px;
+    line-height: 17px;
     cursor: pointer;
     font-size: 18px;
 }
@@ -654,11 +663,11 @@ a{text-decoration: none;}
     height: 22px;
     background: #ffffff;
     border: 1px solid #e0e0e0;
-    border-left: 0.5px solid #e0e0e0;
+    border-left: 1px solid #e0e0e0;
     float: right;
     color:#b8b2b0;
     text-align: center;
-    line-height: 20px;
+    line-height: 17px;
     cursor: pointer;
     font-size: 18px;
 }
@@ -1398,11 +1407,11 @@ a{text-decoration: none;}
     height: 22px;
     background: #f5f5f5;
     border: 1px solid #e0e0e0;
-    border-right: 0.5px solid #e0e0e0;
+    border-right: 1px solid  #e0e0e0 ;
     float: left;
     color:#e5e2e0;
     text-align: center;
-    line-height: 18px;
+    line-height: 17px;
     cursor: pointer;
     font-size: 18px;
 }
@@ -1415,7 +1424,7 @@ a{text-decoration: none;}
     float: right;
     color:#b8b2b0;
     text-align: center;
-    line-height: 18px;
+    line-height: 17px;
     cursor: pointer;
     font-size: 18px;
 }
@@ -1565,10 +1574,15 @@ a{text-decoration: none;}
 	width: 299px;
 }
 .hot .container .two .pic .word{
-	height: 72px;
+	height: 62px;
 	width: 240px;
 	margin: 0 auto;
 	margin-top: 20px;
+	display: -webkit-box;
+	-webkit-line-clamp: 3;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 .hot .container .two .pic .word a{
 	height: 72px;
@@ -1880,16 +1894,30 @@ a{text-decoration: none;}
 	margin: 0 auto;
 
 }
+content .dot{
+	height: 20px;
+	width: 110px;
+	display: flex;
+	justify-content: space-between;
+	position: absolute;
+	bottom: 20px;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+
+}
 .content .dot .box{
-	width: 8px;
-	height: 8px;
+	width: 10px;
+	height: 10px;
 	background-color:#B0B0B0;
 	/* 圆角：圆弧所在圆的半径值 */
 	border-radius: 50%;
-	margin-right: 20px;
+	border:2px solid #B0B0B0 ;
+	margin-top: 5px;
 }
 .content .dot .box:hover{
 	background-color: #ff6700;
+	border:2px solid #ff6700 ;
 }
 .content .dot .boxdot{
 	border: 2px solid #FF6700;
@@ -2020,8 +2048,9 @@ a{text-decoration: none;}
     border-radius: 50%;
     color: #FFFFFF;
     text-align: center;
-    font-size: 18px;
-    line-height: 23px;
+    font-size: 17px;
+    line-height: 22px;
+    padding-left: 2px;
 }
 .Visual_screen_bottom_box{
     width: 296px;
@@ -2108,9 +2137,7 @@ a{text-decoration: none;}
     width: 100%;
     height: 272px;
     background: #ffffff;
-   margin-top: 50px;
-
-
+   /* margin-top: 50px; */
 }
 .Aftersale{
     width: 1226px;
@@ -2317,7 +2344,7 @@ a{text-decoration: none;}
     padding-left: 4px;
     padding-right: 3px;
     height: 13px;
-    border-right: 2px solid #b0b0b0;
+    border-right: 1.5px solid #b0b0b0;
     font-size: 12px;
     line-height: 13px;
     float: left;

@@ -2,18 +2,18 @@
 * @Author: Lenovo
 * @Date:   2018-09-03 15:42:32
 * @Last Modified by:   Lenovo
-* @Last Modified time: 2018-09-06 14:09:45
+* @Last Modified time: 2018-09-15 11:06:00
 */
 
 window.onload=function(){
 	//banner图
 	let imgs=document.querySelectorAll(".banner .imgs img");
 	let dots=document.querySelectorAll(".banner .dots .box");
-	let banner=document.querySelectorAll(".banner")[0];
+	let banner=document.querySelector(".banner .bannerbox");
 	let leftbtn=document.querySelector(".leftbtn");
 	let rightbtn=document.querySelector(".rightbtn");
 	let widths=parseInt(getComputedStyle(imgs[0],null).width);
-	// console.log(imgs,dots,banner,leftbtn,rightbtn,widths);
+	console.log(banner);
 
 	imgs[0].style.left=0;
 	dots[0].classList.add("active");
@@ -99,12 +99,7 @@ window.onload=function(){
 	// 	clearInterval(t);
 	// }
 
-
-
-
-
-
-	//内容轮播
+//内容轮播
 	
 function contentbanner(imgs,dots,leftBtn,rightBtn,widths,active){
 
@@ -315,7 +310,7 @@ for(let i=0;i<lis.length;i++){
 //头部选项卡
 
 let lis1=document.querySelectorAll(".header li");
-let son1=document.querySelectorAll(".header .son1")
+let son1=document.querySelectorAll(".header li .son1")
 console.log(lis1,son1);
 
 
@@ -365,6 +360,55 @@ back.onclick=function(){
               animate(document.documentElement,{scrollTop:arr[index]});
         }
     })
+
+// 倒计时
+
+
+  	timemove();
+    setInterval(timemove,1000)
+    function timemove() {
+        let newtime = new Date()
+        let liss = document.querySelectorAll(".shop .two .last .box")
+        let sa = newtime.getFullYear();
+        let sb = newtime.getDate();
+        let sc = newtime.getMonth();
+        if (newtime.getHours() >= 18) {
+            sb += 1;
+        }
+        let nexttime = new Date(sa, sc, sb, 18);
+        let cha = Math.floor(nexttime.getTime() / 1000) - Math.floor(newtime.getTime() / 1000)
+        let newh = 0;
+        let newf = 0;
+        let newm = 0;
+        let a = [];
+        hour = Math.floor(cha / (60 * 60));
+        fen = Math.floor(cha % (60 * 60) / 60);
+        miao = Math.floor(cha % 60);
+        if (Math.floor(hour / 10) == 0) {
+            newh = "0" + hour;
+        } else {
+            newh = hour
+        }
+        a.push(newh)
+        if (Math.floor(fen / 10) == 0) {
+            newf = "0" + fen;
+        } else {
+            newf = fen
+        }
+        a.push(newf)
+
+        if (Math.floor(miao / 10) == 0) {
+            newm = "0" + miao;
+        } else {
+            newm = miao
+        }
+        a.push(newm)
+        for (let i = 0; i < liss.length; i++) {
+            liss[i].innerText = a[i]
+        }
+    }
+
+
 
 
 
