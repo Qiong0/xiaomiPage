@@ -2,7 +2,7 @@
 * @Author: Lenovo
 * @Date:   2018-09-03 15:42:32
 * @Last Modified by:   Lenovo
-* @Last Modified time: 2018-09-15 11:06:00
+* @Last Modified time: 2018-09-16 16:48:18
 */
 
 window.onload=function(){
@@ -375,8 +375,11 @@ back.onclick=function(){
         if (newtime.getHours() >= 18) {
             sb += 1;
         }
-        let nexttime = new Date(sa, sc, sb, 18);
-        let cha = Math.floor(nexttime.getTime() / 1000) - Math.floor(newtime.getTime() / 1000)
+        // console.log(newtime);
+        let nexttime = new Date(sa, sc, sb,18);
+        let cha = Math.floor(nexttime.getTime() / 1000) - Math.floor(newtime.getTime() / 1000);
+        console.log(cha);
+        // console.log(nowtime.getTime());
         let newh = 0;
         let newf = 0;
         let newm = 0;
